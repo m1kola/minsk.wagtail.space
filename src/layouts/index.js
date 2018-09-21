@@ -2,6 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
+import appleTouchIcon from '../assets/img/favicons/apple-touch-icon.png'
+import favicon32 from '../assets/img/favicons/favicon-32x32.png'
+import favicon16 from '../assets/img/favicons/favicon-16x16.png'
+
 
 class Template extends React.Component {
   render() {
@@ -79,6 +83,12 @@ class Template extends React.Component {
           <meta property="og:type" content="website" />
 
           <meta name="description" content={data.site.siteMetadata.description} />
+
+          <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
+          <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+          <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+
+          <meta name="theme-color" content="#27292f" />
         </Helmet>
         {header}
         {children()}
