@@ -236,8 +236,7 @@ main {
   max-width: 960px;
   margin: 4rem auto 4rem;
   position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px 10px 0 10px;
   h2 {
     font-size: 1.5rem;
     color: $yellow;
@@ -334,6 +333,9 @@ main {
         white-space: nowrap;
       }
     }
+  }
+  .ufo--placeholder {
+    margin: 0 auto 10px auto;
   }
 }
 

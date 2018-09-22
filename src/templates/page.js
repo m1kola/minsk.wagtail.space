@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Header from '../components/header'
 import Footer from '../components/footer'
 import UFO from '../components/ufo'
+import UFOPlaceholder from '../components/ufo--placeholder'
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
@@ -72,6 +73,7 @@ class BlogPostTemplate extends React.Component {
 
         <Element name="main-content">
           <section ref={this.mainContentRef} className="chapter">
+            <UFOPlaceholder moveUFO={this.moveUFO} />
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
