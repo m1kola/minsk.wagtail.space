@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from "gatsby"
 
+import UFOPlaceholder from '../components/ufo--placeholder'
+
 const Header = (props) => (
   <header className="header">
     <div className="header__inner">
       <div className="header__center">
-        <div className="ufo--placeholder"></div>
+        <UFOPlaceholder />
         <h1 className="header__title">{ props.title || props.data.site.siteMetadata.defaultTitle }</h1>
         <span className="header__subtitle">{ props.subtitle || props.data.site.siteMetadata.defaultDescription }</span>
         <button
