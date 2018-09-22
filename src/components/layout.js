@@ -2,13 +2,14 @@ import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import Helmet from 'react-helmet'
 
+import '../assets/scss/main.scss'
+
 // Favicons
 import appleTouchIcon from '../assets/img/favicons/apple-touch-icon.png'
 import favicon32 from '../assets/img/favicons/favicon-32x32.png'
 import favicon16 from '../assets/img/favicons/favicon-16x16.png'
 
 // Layout images
-import wagtailUfo from '../assets/img/wagtail-ufo.svg'
 import planet1 from '../assets/img/planet1.svg'
 import planet2 from '../assets/img/planet2.svg'
 import planet3 from '../assets/img/planet3.svg'
@@ -17,12 +18,11 @@ import planet5 from '../assets/img/planet5.svg'
 import planet6 from '../assets/img/planet6.svg'
 import rocket from '../assets/img/rocket.svg'
 
-import '../assets/scss/main.scss'
-
+import UFO from './ufo'
 
 const Layout = props => {
   const { location, children, data } = props
-  const absoluteURL = props.data.site.siteMetadata.siteUrl + location.pathname
+  const absoluteURL = data.site.siteMetadata.siteUrl + location.pathname
 
   return (
     <div className="root">
@@ -50,7 +50,7 @@ const Layout = props => {
         <meta name="theme-color" content="#27292f" />
       </Helmet>
 
-      <div className="ufo"><img src={wagtailUfo} alt="UFO" /></div>
+      <UFO />
       <img src={planet1} className="planet planet--earth" />
       <img src={planet2} className="planet planet--rings" />
       <img src={planet3} className="planet planet--red" />
