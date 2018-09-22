@@ -11,6 +11,10 @@ const Header = (props) => (
         <UFOPlaceholder moveUFO={props.moveUFO} />
         <h1 className="header__title">{ props.title || props.data.site.siteMetadata.defaultTitle }</h1>
         <span className="header__subtitle">{ props.subtitle || props.data.site.siteMetadata.defaultDescription }</span>
+        {
+          props.data.site.siteMetadata.registrationURL &&
+          <a className="button signup" href={props.data.site.siteMetadata.registrationURL}>Sign up!</a>
+        }
         <button
           className="readmore__button"
           onClick={props.readMoreOnClick}
@@ -48,6 +52,7 @@ export default (props) => (
           siteMetadata {
             defaultTitle
             defaultDescription
+            registrationURL
           }
         }
       }
