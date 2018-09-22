@@ -8,7 +8,7 @@ const Header = (props) => (
   <header className="header">
     <div className="header__inner">
       <div className="header__center">
-        <UFOPlaceholder />
+        <UFOPlaceholder moveUFO={props.moveUFO} />
         <h1 className="header__title">{ props.title || props.data.site.siteMetadata.defaultTitle }</h1>
         <span className="header__subtitle">{ props.subtitle || props.data.site.siteMetadata.defaultDescription }</span>
         <button
@@ -30,6 +30,7 @@ Header.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   readMoreOnClick: PropTypes.func.isRequired,
+  moveUFO: PropTypes.func.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({

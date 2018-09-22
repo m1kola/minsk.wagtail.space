@@ -18,8 +18,6 @@ import planet5 from '../assets/img/planet5.svg'
 import planet6 from '../assets/img/planet6.svg'
 import rocket from '../assets/img/rocket.svg'
 
-import UFO from './ufo'
-
 const Layout = props => {
   const { location, children, data } = props
   const absoluteURL = data.site.siteMetadata.siteUrl + location.pathname
@@ -50,7 +48,6 @@ const Layout = props => {
         <meta name="theme-color" content="#27292f" />
       </Helmet>
 
-      <UFO />
       <img src={planet1} className="planet planet--earth" />
       <img src={planet2} className="planet planet--rings" />
       <img src={planet3} className="planet planet--red" />

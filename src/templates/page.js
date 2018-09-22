@@ -6,13 +6,35 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Header from '../components/header'
 import Footer from '../components/footer'
+import UFO from '../components/ufo'
 
 class BlogPostTemplate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      UFOPosition: {
+        top: 0,
+        left: 0,
+      }
+    }
+
+    this.moveUFO = this.moveUFO.bind(this)
+  }
+
   scrollToMainContent() {
     scroller.scrollTo('main-content', {
       duration: 800,
       delay: 0,
       smooth: 'easeInOutQuart'
+    })
+  }
+
+  moveUFO(top, left) {
+    this.setState({
+      UFOPosition: {
+        top,
+        left,
+      }
     })
   }
 
@@ -40,10 +62,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={post.frontmatter.title} meta={meta} />
+        <UFO top={this.state.UFOPosition.top} left={this.state.UFOPosition.left} />
         <Header
           title={post.frontmatter.title}
           subtitle={post.frontmatter.subtitle}
           readMoreOnClick={() => this.scrollToMainContent()}
+          moveUFO={this.moveUFO}
         />
 
         <Element name="main-content">
@@ -56,7 +80,7 @@ class BlogPostTemplate extends React.Component {
           </section>
         </Element>
 
-        <Footer />
+        <Footer moveUFO={this.moveUFO} />
       </Layout>
     )
   }
