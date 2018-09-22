@@ -74,13 +74,22 @@ class BlogPostTemplate extends React.Component {
         <Element name="main-content">
           <section ref={this.mainContentRef} className="chapter">
             <UFOPlaceholder moveUFO={this.moveUFO} />
+
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
               </div>
             </div>
+
+            <div className="row">
+              <div className="col-md-10 offset-md-1">
+                <a href={this.props.data.site.siteMetadata.registrationURL} className="button signup">Sign up!</a>
+              </div>
+            </div>
+
           </section>
         </Element>
+
 
         <Footer moveUFO={this.moveUFO} />
       </Layout>
@@ -95,6 +104,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+        registrationURL
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
