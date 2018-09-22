@@ -1,5 +1,5 @@
 {
-  "name": "mikola_by",
+  "name": "minsk_wagtail_space",
   "description": "minsk.wagtail.space",
   "version": "1.0.0",
   "bugs": {
@@ -48,6 +48,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
+    "serve": "gatsby serve",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",

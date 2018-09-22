@@ -9,7 +9,7 @@ import Footer from '../components/footer'
 import UFO from '../components/ufo'
 import UFOPlaceholder from '../components/ufo--placeholder'
 
-class BlogPostTemplate extends React.Component {
+class PageTemplate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -97,10 +97,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default PageTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query PageBySlug($slug: String!) {
     site {
       siteMetadata {
         siteUrl
