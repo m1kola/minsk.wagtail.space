@@ -1,12 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import { Link, graphql} from 'gatsby'
+
+import Layout from "../components/layout"
 
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const { previous, next } = this.props.pathContext
+    const { previous, next } = this.props.pageContext
 
     const meta = []
     if (post.frontmatter.title) {
@@ -27,7 +29,7 @@ class BlogPostTemplate extends React.Component {
     }
 
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet title={post.frontmatter.title} meta={meta} />
         <h1>{post.frontmatter.title}</h1>
         <h2>
@@ -62,7 +64,7 @@ class BlogPostTemplate extends React.Component {
             }
           </li>
         </ul>
-      </div>
+      </Layout>
     )
   }
 }

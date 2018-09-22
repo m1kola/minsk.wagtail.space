@@ -8,6 +8,13 @@ module.exports = {
     }
   },
   plugins: [
+    // `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        precision: 8,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

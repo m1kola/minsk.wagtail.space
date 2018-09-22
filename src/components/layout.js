@@ -1,10 +1,12 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { StaticQuery, Link, graphql } from "gatsby"
 import Helmet from 'react-helmet'
 
 import appleTouchIcon from '../assets/img/favicons/apple-touch-icon.png'
 import favicon32 from '../assets/img/favicons/favicon-32x32.png'
 import favicon16 from '../assets/img/favicons/favicon-16x16.png'
+
+import '../assets/scss/main.scss'
 
 
 class Template extends React.Component {
@@ -61,12 +63,7 @@ class Template extends React.Component {
     }
 
     return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
+      <div class="root">
         <Helmet
           defaultTitle={data.site.siteMetadata.title}
           titleTemplate={'%s | ' + data.site.siteMetadata.title}
@@ -91,25 +88,29 @@ class Template extends React.Component {
           <meta name="theme-color" content="#27292f" />
         </Helmet>
         {header}
-        {children()}
+        {children}
       </div>
     )
   }
 }
 
-export default Template
 
-export const query = graphql`
-  query LayoutTemplate {
-    site {
-      siteMetadata {
-        siteUrl
-        title
-        description
-        socialMedia {
-          twitter
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query LayoutQuery {
+        site {
+          siteMetadata {
+            siteUrl
+            title
+            description
+            socialMedia {
+              twitter
+            }
+          }
         }
       }
-    }
-  }
-`
+    `}
+    render={data => <Template data={data} {...props} />}
+  />
+)
