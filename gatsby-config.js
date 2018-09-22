@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Wagtail Space Minsk',
-    description: 'A sprint dedicated to Wagtail CMS that will take place in Minsk, Belarus on October 27-28, 2018',
+    defaultTitle: 'Wagtail Space Minsk',
+    defaultDescription: 'A sprint dedicated to Wagtail CMS that will take place in Minsk, Belarus on the 27-28th of October, 2018',
     siteUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:8000' : 'https://minsk.wagtail.space',
     socialMedia: {
       twitter: "@wagtailcms",

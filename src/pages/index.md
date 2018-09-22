@@ -1,5 +1,7 @@
 ---
+subtitle: "27-28 October, 2018"
 date: "2018-09-22"
+description: "A sprint dedicated to Wagtail CMS that will take place in Minsk, Belarus on the 27-28th of October, 2018"
 shareImage: "./../media/images/og-image.png"
 ---
 
@@ -68,4 +70,4 @@ We are currently looking for sponsors to help us with the following:
 -   To cover cost of lunches for participants
 -   Souvenirs
 
-We are looking forward to see you at Wagtail Space Minsk on 27-28th of October!
+We are looking forward to see you at Wagtail Space Minsk on the 27-28th of October!

@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 import { Link, graphql} from 'gatsby'
 
 import Layout from "../components/layout"
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 
 class BlogPostTemplate extends React.Component {
@@ -15,10 +17,10 @@ class BlogPostTemplate extends React.Component {
       meta.push({property: 'og:title', content: post.frontmatter.title})
       meta.push({name: 'twitter:title', content: post.frontmatter.title})
     }
-    if (post.frontmatter.subtitle) {
-      meta.push({name: 'description', content: post.frontmatter.subtitle})
-      meta.push({name: 'twitter:description', content: post.frontmatter.subtitle})
-      meta.push({property: 'og:description', content: post.frontmatter.subtitle})
+    if (post.frontmatter.description) {
+      meta.push({name: 'description', content: post.frontmatter.description})
+      meta.push({name: 'twitter:description', content: post.frontmatter.description})
+      meta.push({property: 'og:description', content: post.frontmatter.description})
     }
     if (post.frontmatter.shareImage) {
       const imageURL = this.props.data.site.siteMetadata.siteUrl + post.frontmatter.shareImage.childImageSharp.resize.src;
@@ -30,40 +32,18 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+        <Header title={post.frontmatter.title} subtitle={post.frontmatter.subtitle} />
         <Helmet title={post.frontmatter.title} meta={meta} />
-        <h1>{post.frontmatter.title}</h1>
-        <h2>
-          {post.frontmatter.subtitle}
-        </h2>
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="chapter">
+          <div className="row">
+            <div className="col-md-10 offset-md-1">
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
+          </div>
+        </section>
 
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {
-              previous &&
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            }
-          </li>
-          <li>
-            {
-              next &&
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            }
-          </li>
-        </ul>
+        <Footer />
       </Layout>
     )
   }
@@ -83,6 +63,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        subtitle
+        description
         shareImage {
           childImageSharp {
             resize(width: 800) {
