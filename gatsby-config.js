@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     defaultTitle: 'Wagtail Space Minsk',
     defaultDescription: 'A sprint dedicated to Wagtail CMS that will take place in Minsk, Belarus on the 27-28th of October, 2018',
-    registrationURL: "https://python-meetup.timepad.ru/event/803031/",
+    registrationURL: "https://goo.gl/forms/ufyeheigKJqn8YdR2",
     siteUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:8000' : 'https://minsk.wagtail.space',
     socialMedia: {
       twitter: "@wagtailcms",
