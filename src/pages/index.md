@@ -53,7 +53,7 @@ Saturday, 27 October
 -   11:00 - working on tasks
 -   13:00 - lunch break
 -   14:00 - working on tasks
--   17:00 - review of the first day
+-   19:00 - review of the first day
 
 Sunday, 28 October
 
@@ -61,7 +61,7 @@ Sunday, 28 October
 -   10:00 - working on tasks
 -   13:00 - lunch break
 -   14:00 - working on tasks
--   17:00 - review of the sprint
+-   18:00 - review of the sprint
 -   After party in a pub
 
 We are currently looking for sponsors to help us with the following:
