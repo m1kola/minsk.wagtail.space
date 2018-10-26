@@ -64,10 +64,4 @@ Sunday, 28 October
 -   18:00 - review of the sprint
 -   After party in a pub
 
-We are currently looking for sponsors to help us with the following:
-
--   To cover rent of a venue. You can also invite us into your office (up to 30 people)
--   To cover cost of lunches for participants
--   Souvenirs
-
 We are looking forward to see you at Wagtail Space Minsk on the 27-28th of October!
