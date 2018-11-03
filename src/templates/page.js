@@ -81,11 +81,14 @@ class PageTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-md-10 offset-md-1">
-                <a href={this.props.data.site.siteMetadata.registrationURL} className="button signup">Sign up!</a>
+            {
+              this.props.data.site.siteMetadata.registrationURL &&
+              <div className="row">
+                <div className="col-md-10 offset-md-1">
+                  <a href={this.props.data.site.siteMetadata.registrationURL} className="button signup">Sign up!</a>
+                </div>
               </div>
-            </div>
+            }
 
           </section>
         </Element>
